@@ -41,10 +41,10 @@ internal class Program
             Console.WriteLine("Enter Student id:");
             int id = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter Student Name and Email:");
-            string name = Console.ReadLine();
-            string email = Console.ReadLine();
+            string? name = Console.ReadLine();
+            string? email = Console.ReadLine();
             Console.WriteLine("Enter the joining date:");
-            DateTime date = DateTime.Parse(Console.ReadLine());
+            DateTime date = DateTime.Parse(Console.ReadLine()??string.Empty);
             cmd.Parameters.AddWithValue("@stid", id);
             cmd.Parameters.AddWithValue("@stname", name);
             cmd.Parameters.AddWithValue("@email", email);
@@ -64,10 +64,10 @@ internal class Program
             Console.WriteLine("Enter Student id which need to be updated:");
             int id = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter Student Name and Email:");
-            string name = Console.ReadLine();
-            string email = Console.ReadLine();
+            string name = Console.ReadLine() ?? string.Empty;
+            string email = Console.ReadLine() ?? string.Empty;
             Console.WriteLine("Enter the joining date:");
-            DateTime date = DateTime.Parse(Console.ReadLine());
+            DateTime date = DateTime.Parse(Console.ReadLine() ?? string.Empty);
             cmd.Parameters.AddWithValue("@stid", id);
             cmd.Parameters.AddWithValue("@stname", name);
             cmd.Parameters.AddWithValue("@email", email);
